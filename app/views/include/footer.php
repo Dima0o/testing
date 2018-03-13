@@ -37,6 +37,21 @@
                     }
                 });
             });
+            //$(input).click(function() {
+              //  Console.log($(input).attr("date-log"));
+                //var a =;
+               // $($(input).attr("date-log")).css("color": "#f8f9fa","background-color":"#28a745");
+               // Console.log(a);
+             //   });
+            $(".radio").click(function() {
+               // console.log($( this ).attr("attrName"));
+                //console.log($( this ));
+                $('[attrName1='+$( this ).attr("attrName")+']').css({'color':'#f8f9fa', 'background-color': '#28a745'});
+                //var a=$( this ).attr("attrName");
+                //$('[date-value=a]').css({'color':'#f8f9fa', 'background-color': '#28a745'});
+                //
+            });
+
         </script>
     </body>
 </html>

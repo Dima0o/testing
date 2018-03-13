@@ -876,8 +876,8 @@ $json = '
                 ?>
 
                 <p id="question_1" class="card-text mb-auto"> <b><?=$key_item+1?>)</b> <br>
-                    <div class="radio"><label><input type="radio" value="А" name="<?=$key_item+1?>" <?=$a?> required> <?=$item[0]?></label></div>
-                    <div class="radio"><label><input type="radio" value="Б" name="<?=$key_item+1?>" <?=$b?> > <?=$item[1]?></label></div>
+                    <div class="radio"  attrName="<?=$key_item+1?>" ><label><input type="radio"  value="А" name="<?=$key_item+1?>" <?=$a?> required> <?=$item[0]?></label></div>
+                    <div class="radio" attrName="<?=$key_item+1?>"><label ><input type="radio"  value="Б" name="<?=$key_item+1?>" <?=$b?> > <?=$item[1]?></label></div>
                 </p>
 
             <? endforeach; ?>
@@ -908,7 +908,7 @@ $json = '
     <div class="bd-example" id="top_nav">
 
         <?
-        $i=0;
+      /*  $i=0;
         foreach ( json_decode($json) as $key_item => $item ){
 
             if($i==9){
@@ -921,10 +921,38 @@ $json = '
                 echo '<span class="badge badge-light badge-pill">'.$key_item.'</span>';
 
             $i++;
-        }
+        }*/
         ?>
+        <div class="card" style="width: 25rem;">
 
+            <div class="card-body">
+                <p class="card-text">
 
+        <?
+          $i=0;
+          foreach ( json_decode($json) as $key_item => $item ){
+                if($key_item==0){
+                    //echo '<div class="btn-group btn-group-sm demoPadder  btn-block" role="group" aria-label="Extra-small button group">';
+                    echo '';
+                }
+              if($i==count(json_decode($json))+1){
+             /* echo '</div>
+                <br>
+            <div class="btn-group btn-group-sm  demoPadder  btn-block" role="group" aria-label="Extra-small button group">';*/
+             echo '<br>';
+                  $i=0;
+              }
+              $key_item=$key_item+1;
+                  echo ' <span class="badge badge-secondary" attrName1="'.$key_item.'"> '.$key_item.' </span>';
+              if($key_item==count(json_decode($json))){
+                  //echo '</div>';
+                  echo '</p>';
+              }
+              $i++;
+          }
+        ?>
+            </div>
+        </div>
     </div>
     <!--
     <div class="p-3" style="position: fixed;">
