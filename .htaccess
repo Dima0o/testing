@@ -1,0 +1,6 @@
+RewriteEngine On
+#Don't favicon!
+RewriteCond %{REQUEST_FILENAME} !^favicon\.ico
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [L,QSA]
