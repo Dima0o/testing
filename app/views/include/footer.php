@@ -21,7 +21,7 @@
         </script>
         <script>
             var h_hght = 180; // высота шапки
-            var h_mrg = 0;     // отступ когда шапка уже не видна
+            var h_mrg = 10;     // отступ когда шапка уже не видна
             $(function(){
                 $(window).scroll(function(){
                     var top = $(this).scrollTop();
@@ -37,19 +37,16 @@
                     }
                 });
             });
-            //$(input).click(function() {
-              //  Console.log($(input).attr("date-log"));
-                //var a =;
-               // $($(input).attr("date-log")).css("color": "#f8f9fa","background-color":"#28a745");
-               // Console.log(a);
-             //   });
             $(".radio").click(function() {
-               // console.log($( this ).attr("attrName"));
-                //console.log($( this ));
                 $('[attrName1='+$( this ).attr("attrName")+']').css({'color':'#f8f9fa', 'background-color': '#28a745'});
-                //var a=$( this ).attr("attrName");
-                //$('[date-value=a]').css({'color':'#f8f9fa', 'background-color': '#28a745'});
-                //
+            });
+            $(".badge").click(function () {
+                //console.log($( this ).attr("attrName1").offset().top);
+                var scrollTop =$('[attrName='+$( this ).attr("attrName1")+']').offset().top-100;
+
+                // скроллим страницу на значение равное позиции элемента
+                $(document).scrollTop(scrollTop);
+                //.focus();
             });
 
         </script>
